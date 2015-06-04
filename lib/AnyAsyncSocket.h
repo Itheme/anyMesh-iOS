@@ -12,6 +12,6 @@
 
 @interface AsyncSocket (AnyMeshHelper)
 
-@property (nonatomic, strong) MeshDeviceInfo *deviceInfo;
+@property (nonatomic, getter = getDeviceInfo, setter = setDeviceInfo:) MeshDeviceInfo *deviceInfo;
 
 @end

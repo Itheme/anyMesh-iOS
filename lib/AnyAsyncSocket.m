@@ -11,19 +11,22 @@
 
 #import "AnyAsyncSocket.h"
 #import "MeshDeviceInfo.h"
+#import <objc/runtime.h>
 
 @implementation AsyncSocket (AnyMeshHelper)
 
 @dynamic deviceInfo;
 
-//// Designated initializer.
-//- (id)initWithDelegate:(id)delegate userData:(long)userData
-//{
-//	if((self = [super initWithDelegate:delegate userData:userData]))
-//	{
-//        self.deviceInfo = [[MeshDeviceInfo alloc] init];
-//	}
-//	return self;
-//}
+static char *kDeviceInfoKey = "device_info";
+
+- (MeshDeviceInfo *) getDeviceInfo
+{
+    return objc_getAssociatedObject(self, kDeviceInfoKey);
+}
+
+- (void) setDeviceInfo:(MeshDeviceInfo *)deviceInfo
+{
+    objc_setAssociatedObject(self, kDeviceInfoKey, deviceInfo, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 
 @end

@@ -12,6 +12,7 @@
 #import "MeshMessage.h"
 #import <ifaddrs.h>
 #import <arpa/inet.h>
+#import "AnyAsyncSocket.h"
 
 
 @implementation AnyMesh
@@ -26,6 +27,7 @@
         connections = [[NSMutableArray alloc] init];
         temporary = [[NSMutableArray alloc] init];
         listenSocket = [[AsyncSocket alloc] initWithDelegate:self];
+        listenSocket.deviceInfo = [[MeshDeviceInfo alloc] init];
         
         [self startUDPListener];
     }
@@ -96,6 +98,7 @@
     NSLog(@"trying to connect to %@", name);
     
     AsyncSocket *socket = [[AsyncSocket alloc] initWithDelegate:self];
+    socket.deviceInfo = [[MeshDeviceInfo alloc] init];
     [socket connectToHost:ipAddress onPort:port error:nil];
     [temporary addObject:socket];
 }
