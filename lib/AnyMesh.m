@@ -12,7 +12,7 @@
 #import "MeshMessage.h"
 #import <ifaddrs.h>
 #import <arpa/inet.h>
-#import "AnyAsyncSocket.h"
+#import "AsyncSocket+AnyMesh.h"
 
 
 @implementation AnyMesh

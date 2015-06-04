@@ -9,7 +9,7 @@
 #warning This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
 #endif
 
-#import "AnyAsyncSocket.h"
+#import "AsyncSocket+AnyMesh.h"
 #import "MeshDeviceInfo.h"
 #import <objc/runtime.h>
 

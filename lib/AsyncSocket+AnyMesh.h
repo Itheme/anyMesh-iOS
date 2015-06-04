@@ -1,5 +1,5 @@
 //
-//  AnyAsyncSocket.h
+//  AsyncSocket+AnyMesh.h
 //  
 //  Wrapper of an AsyncSocket for AnyMesh
 //  Originally created by Dan Parkhomenko June 4 2015.
