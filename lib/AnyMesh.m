@@ -36,6 +36,7 @@
 
 -(void)startUDPListener
 {
+    [AsyncUdpSocket togglePortReuseOption];
     udpSocket = [[AsyncUdpSocket alloc] initWithDelegate:self];
     [udpSocket enableBroadcast:true error:nil];
     
